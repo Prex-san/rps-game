@@ -67,20 +67,36 @@ function playRound(computerSelection, playerSelection){
 function getComputerChoice(){
     return Math.floor(Math.random()*3);
 }
-let computerSelection = getComputerChoice();
-let playerSelection = prompt("Enter your choice").toLowerCase();
-let result = playRound(computerSelection,playerSelection);
-if(result == 0){
-    console.log("The game is a tie.");
+function game(numberOfRounds){
+    let playerScore = 0, computerScore = 0;
+    let currentRound = 1;
+    let computerSelection,playerSelection;
+    while(playerScore !== numberOfRounds && computerScore !== numberOfRounds){
+        computerSelection = getComputerChoice();
+        playerSelection = prompt("Enter your choice").toLowerCase();
+        let result = playRound(computerSelection,playerSelection);
+        if(result == 0){
+            console.log("Round "+currentRound+": The round is a tie.");
+        }
+        else if(result==1){
+            console.log("Round "+currentRound+": The player wins!");
+            playerScore++;
+        }
+        else if(result==2){
+            console.log("Round "+currentRound+": The computer wins!");
+            computerScore++;
+        }
+        else{
+            console.log("Enter a vaild input, you imbecile");
+        }
+        console.log("Player Score: "+playerScore+" Computer Score: "+computerScore);
+        currentRound++;
+    }
+    if(playerScore === numberOfRounds){
+        console.log("The PLAYER wins!");
+    }
+    else{
+        console.log("The COMPUTER wins!");
+    }
 }
-else if(result==1){
-    console.log("The player wins!");
-}
-else if(result==2){
-    console.log("The computer wins!");
-}
-else{
-    console.log("Enter a vaild input, you imbecile");
-}
-
-
+game(5);
