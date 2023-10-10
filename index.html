@@ -2,11 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Rock, Paper, Scissors</title>
-    <script src = "./script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Handjet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors V1.0</h1>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <section class="normal-bg">
+        <p class="score"> <span id="player-score">0</span> - <span id="computer-score">0</span> </p>
+        <div class="players">
+        <div class="player">
+            <div class="player-menu">
+                <p>Choose an option</p>
+                <div class="options">
+                    <div class="rock">Rock</div>
+                    <div class="paper">Paper</div>
+                    <div class="scissors">Scissors</div>
+                </div>
+            </div> 
+            <div class="choice-screen hidden">
+                <div>You played <span class="player-message">-</span> </div>
+                <img id = "player-image-choice" src = "./res/stone.gif">
+            </div> 
+            <div class="player-result hidden">
+                <p class="player-result-message">You Win!</p>
+            </div>
+        </div>
+        <div class="computer">
+            <div class="computer-menu">
+                <p>The computer is waiting for your play</p>
+            </div> 
+            <div class="choice-screen hidden">
+                <div>The computer played <span class="computer-message">-</span></div>
+                <img id = "computer-image-choice" src = "./res/stone.gif">
+            </div> 
+            <div class="computer-result hidden">
+                <p class="computer-result-message">The computer lost!</p>
+            </div>
+        </div>
+        </div>
+        <input type="button" value="Next" id="switch">
+    </section>
+    <div class="final-screen normal-bg hidden">
+        <h1>GAME OVER!</h1>
+        <p class="score"> <span id="player-score-fin">0</span> - <span id="computer-score-fin">0</span> </p>
+        <p class="final-message">The player wins!</p>
+        <input type="button" value="Another round?" id="another-round">
+    </div>
+    <footer>
+        Raghu Raman,2023
+    </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
